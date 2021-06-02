@@ -1,5 +1,11 @@
 # Projections of the Transient State-Dependency of Climate Feedbacks
 
+Codes used to obtain climate feedback contributions and compute climate feedback strengths over time. This repository contains the MATLAB (2018a), Python (3.0) and Jupyter Notebook files used for the research in the paper 'Projections of the Transient State-Dependency of Climate Feedbacks'.
+
+These codes can be used to compute feedback contributions for the CESM2 experiments in CMIP6. Below follow a description of the various folders and codes, seperated by the folder in which they can be found. In general, the Python and Jupyter notebook files are used for computations of the climate feedback contributions and plotting of 2D spatial maps, and MATLAB files are used for regressions and computations of feedback strengths.
+
+To compute climate feedback contributions from GCMs radiative kernels are needed, which are not provided here. For our study, we have used CAM5 kernels by Pendergrass et al (2018) (see also https://doi.org/10.5065/D6F47MT6 and https://doi.org/10.5281/zenodo.997899). Some codes might rely on the presence of additional folders to write the data and figures to; you might have to create these yourself beforehand (as Github does not allow for empty folders).
+
 
 ## Instructions and Explanations of codes used
 
@@ -9,7 +15,8 @@ Explanation is per map.
 
 ### 1. Python
 
-For computations of observables from GCM data (2D fields and globally averaged), which gets saved in nc files. These require radiative kernels. For this study, we have used CAM5 kernels by Pendergrass ..... The Jupyter notebooks should be run to create these data files. Most of the actual code is contained in seperate python files.
+For computations of observables from GCM data (2D fields and globally averaged), which gets saved in nc files. These require radiative kernels. For this study, we have used CAM5 kernels by Pendergrass et al (2018) [https://doi.org/10.5065/D6F47MT6
+329 and https://doi.org/10.5281/zenodo.997899.] The Jupyter notebooks should be run to create these data files. Most of the actual code is contained in seperate python files.
 
 There are two submaps for the different forcing scenarios:
 	* CESM2 abrupt4xCO2
@@ -88,6 +95,16 @@ This contains two subfolders
 	* save_projection.m: saves the projection to a nc file.
 	* save_projection_cloud.m: saves the cloud feedback to a nc file.
 		
-### Python Packages
-
+### Python Packages used
+The following python packages have been used for the feedback computations:
+* numpy
+* xarray
+* intake
+* os
+* pandas
+* warnings
+* sys
+In addition, for the spatial plots the following packages have also been used:
+* cartopy
+* matplotlib
 		
